@@ -5,9 +5,14 @@ class Game
     @hum = "O" # the user's marker
   end
 
-  def start_game
-    # start by printing the board
+  def print_board
     puts " #{@board[0]} | #{@board[1]} | #{@board[2]} \n===+===+===\n #{@board[3]} | #{@board[4]} | #{@board[5]} \n===+===+===\n #{@board[6]} | #{@board[7]} | #{@board[8]} \n"
+
+  end
+
+  def start_game
+    puts "Welcome"
+    print_board
     puts "Enter [0-8]:"
     # loop through until the game was won or tied
     until game_is_over(@board) || tie(@board)
@@ -15,7 +20,7 @@ class Game
       if !game_is_over(@board) && !tie(@board)
         eval_board
       end
-      puts " #{@board[0]} | #{@board[1]} | #{@board[2]} \n===+===+===\n #{@board[3]} | #{@board[4]} | #{@board[5]} \n===+===+===\n #{@board[6]} | #{@board[7]} | #{@board[8]} \n"
+      print_board
     end
     puts "Game over"
   end
@@ -23,7 +28,12 @@ class Game
   def get_human_spot
     spot = nil
     until spot
-      spot = gets.chomp.to_i
+      input= gets.chomp
+      unless ("0".."8").include?(input)
+        puts "wrong Input"
+        redo
+      end
+      spot = input.to_i
       if @board[spot] != @com && @board[spot] != @hum
         @board[spot] = @hum
       else

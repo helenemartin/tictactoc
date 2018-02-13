@@ -9,6 +9,12 @@ Handle bad input message
 Prompt to only 8 choices, play on already played number.
 
 
+Refactor
+Validation and player move
+
+method that prints out the board
+
+
 
 Enhancement:
 
