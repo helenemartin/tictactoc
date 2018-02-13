@@ -1,0 +1,21 @@
+User Experience:
+
+
+(Gherkin-expand)
+As a player Welcome note
+When exiting the game, good bye note play again
+
+Handle bad input message
+Prompt to only 8 choices, play on already played number.
+
+
+
+Enhancement:
+
+Initial dashboard to welcome and ask level difficulties
+press enter to see the playing board
+
+bold and color to better see moves
+different colour for player
+
+
